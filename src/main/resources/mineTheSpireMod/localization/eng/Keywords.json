@@ -1,0 +1,26 @@
+[
+  {
+    "PROPER_NAME": "Mine",
+    "NAMES": [
+      "Mine",
+      "mine"
+    ],
+    "DESCRIPTION": "Mine adds resources to your inventory"
+  },
+  {
+    "PROPER_NAME": "Equip",
+    "NAMES": [
+      "Equip",
+      "equip"
+    ],
+    "DESCRIPTION": "Equip this tool/armor to your hand/body. Swap the tool/armor if already equipped."
+  },
+  {
+    "PROPER_NAME": "Durability",
+    "NAMES": [
+      "Durability",
+      "durability"
+    ],
+    "DESCRIPTION": "Lose one durability per tool/armor usage. Upon losing all durability. Remove tool/armor from deck."
+  }
+]

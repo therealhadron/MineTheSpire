@@ -1,0 +1,138 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+
+  "${modID}:Strike_Minecrafter":{
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+
+  "${modID}:Defend_Minecrafter":{
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+
+  "${modID}:Snowball":{
+    "NAME": "Snowball",
+    "DESCRIPTION": "Apply !M! Weak."
+  },
+
+  "${modID}:SweepingBlade":{
+    "NAME": "Sweeping Blade",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  },
+
+  "${modID}:EndCrystalExplosion":{
+    "NAME": "End Crystal Explosion",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies AND yourself."
+  },
+
+  "${modID}:Mine":{
+    "NAME": "Mine",
+    "DESCRIPTION": "${modID}:Mine !${modID}:St! Stone. NL ${modID}:Mine !${modID}:Ir! Iron. NL ${modID}:Mine !${modID}:Di! Diamond. Exhaust."
+  },
+
+  "${modID}:PunchATree":{
+    "NAME": "Punch A Tree",
+    "DESCRIPTION": "Punch a tree for x wood. Exhaust.",
+    "FLAVOR": "Punching a tree... what could go wrong?"
+  },
+
+
+  "${modID}:StripMine":{
+    "NAME": "Strip Mine",
+    "DESCRIPTION": "Mine !M! Stone. Mine !M! Iron. Exhaust."
+  },
+
+  "${modID}:QuarryMine":{
+    "NAME": "Quarry Mine",
+    "DESCRIPTION": "Mine !M! Stone. Mine !M! Iron. Mine !M! Diamond. Exhaust."
+  },
+
+  "${modID}:Chop":{
+    "NAME": "Chop",
+    "DESCRIPTION": "Deal !D! damage. Chop !M! Wood. Exhaust."
+  },
+
+  "${modID}:DigStraightDown":{
+    "NAME": "Dig Straight Down",
+    "DESCRIPTION": "Mine !${modID}:STONE! Stone. NL 50% Chance of Shuffling a Lava into your draw pile."
+  },
+
+  "${modID}:Sprint":{
+    "NAME": "Sprint",
+    "DESCRIPTION": "Draw !${modID}:DRAW! cards. Gain !${modID}:WEAK! Weak."
+  },
+
+  "${modID}:MilkBucket":{
+    "NAME": "Milk Bucket",
+    "DESCRIPTION": "Remove ALL buffs and debuffs. NL Exhaust."
+  },
+
+  "${modID}:WaterBucket":{
+    "NAME": "Water Bucket",
+    "DESCRIPTION": "Retain. Gain !B! block. NL If Lava is drawn exhuast it and this Water Bucket and add an Obsidian B‎lock to your hand."
+  },
+
+  "${modID}:BuildStoneWall":{
+    "NAME": "Build Stone Wall",
+    "DESCRIPTION": "Use !${modID}:STONE! Stone. Gain !B! block.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough stone!"]
+  },
+
+  "${modID}:TNTCannon":{
+    "NAME": "TNT Cannon",
+    "DESCRIPTION": "Do something"
+  },
+
+  "${modID}:Lava":{
+    "NAME": "Lava",
+    "DESCRIPTION": "At the start of the turn exhaust a random card from your hand. At end of turn deals !D! damage."
+  },
+
+  "${modID}:ObsidianBlock":{
+    "NAME": "Obsidian Block",
+    "DESCRIPTION": "Gain !B! block. NL Exhaust."
+  },
+
+  "${modID}:BucketClutch":{
+    "NAME": "Bucket Clutch",
+    "DESCRIPTION": "Use !${modID}:IRON! Iron. NL Gain !M! Intangible. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retains. Use !${modID}:IRON! Iron. NL Gain !M! Intangible. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough iron!"]
+  },
+
+  "${modID}:WoodenPickaxe":{
+    "NAME": "Wooden Pickaxe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!",
+    "FLAVOR": "Its a basic pickaxe... Like you... BASIC"
+  },
+
+  "${modID}:StonePickaxe":{
+    "NAME": "Stone Pickaxe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!"
+  },
+
+  "${modID}:IronPickaxe":{
+    "NAME": "Iron Pickaxe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!"
+  },
+
+  "${modID}:DiamondPickaxe":{
+    "NAME": "Diamond Pickaxe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!"
+  },
+
+  "${modID}:WoodenAxe":{
+    "NAME": "Wooden Axe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !M!"
+  }
+}
