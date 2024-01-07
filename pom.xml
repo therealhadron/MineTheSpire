@@ -3,7 +3,7 @@
 
     <properties>
         <modID>MineTheSpire</modID>
-        <author>Hadron</author>
+        <author>therealhadron</author>
 
         <!-- Change the path for your system to match your Steam installation. -->
         <steam.windows>E:\Steam games\steamapps</steam.windows>
