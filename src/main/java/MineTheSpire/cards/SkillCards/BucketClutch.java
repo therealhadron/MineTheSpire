@@ -49,7 +49,7 @@ public class BucketClutch extends BaseCard{
         } else {
            return canUse;
         }
-     }
+    }
 
     @Override
     public AbstractCard makeCopy() {

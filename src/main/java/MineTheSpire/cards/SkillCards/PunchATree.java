@@ -12,7 +12,7 @@ import MineTheSpire.character.Minecrafter;
 import MineTheSpire.ui.Inventory;
 
 public class PunchATree extends BaseCard{
-    public static final String ID = makeID(Mine.class.getSimpleName());
+    public static final String ID = makeID(PunchATree.class.getSimpleName());
 
     private static final int COST = 0;
 
@@ -35,7 +35,7 @@ public class PunchATree extends BaseCard{
 
     @Override
     public AbstractCard makeCopy() {
-        return new Mine();
+        return new PunchATree();
     }
 
     @Override

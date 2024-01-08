@@ -112,27 +112,27 @@
 
   "${modID}:WoodenPickaxe":{
     "NAME": "Wooden Pickaxe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !${modID}:Dur!",
     "FLAVOR": "Its a basic pickaxe... Like you... BASIC"
   },
 
   "${modID}:StonePickaxe":{
     "NAME": "Stone Pickaxe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!"
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !${modID}:Dur!"
   },
 
   "${modID}:IronPickaxe":{
     "NAME": "Iron Pickaxe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!"
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !${modID}:Dur!"
   },
 
   "${modID}:DiamondPickaxe":{
     "NAME": "Diamond Pickaxe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !M!"
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Mine !${modID}:St! more stone. NL ${modID}:Mine !${modID}:Ir! more iron. NL ${modID}:Mine !${modID}:Di! more diamond. NL ${modID}:Durability left !${modID}:Dur!"
   },
 
   "${modID}:WoodenAxe":{
     "NAME": "Wooden Axe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !M!"
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!"
   }
 }

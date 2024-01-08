@@ -15,7 +15,7 @@ public class WoodenAxe extends EquipmentTool{
     public static final String ID = makeID(WoodenAxe.class.getSimpleName());
 
     private static final int COST = 1;
-    private final int DURABILITY = 2;
+    private static final int DURABILITY = 2;
 
     private final int WOOD_COST = 0;
     private final int STONE_COST = 1;
@@ -32,9 +32,9 @@ public class WoodenAxe extends EquipmentTool{
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.POWER, CardRarity.SPECIAL, CardTarget.NONE, COST);
 
     public WoodenAxe(){
-        super(ID, info, WOOD, STONE, IRON, DIAMOND);
+        super(ID, info, WOOD, STONE, IRON, DIAMOND, DURABILITY);
         setSelfRetain(true);
-        this.baseMagicNumber = DURABILITY;
+        this.baseDurability = DURABILITY;
         this.baseStone = this.stone = STONE;
         this.baseIron = this.iron = IRON;
         this.baseDiamond = this.diamond = DIAMOND;

@@ -13,7 +13,7 @@
       "Equip",
       "equip"
     ],
-    "DESCRIPTION": "Equip this tool/armor to your hand/body. Swap the tool/armor if already equipped."
+    "DESCRIPTION": "Equip this tool/armor to your hand/body. Swap the tool/armor if already equipped. Cost 1 [E] to unequip."
   },
   {
     "PROPER_NAME": "Durability",

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import MineTheSpire.cards.BaseCard;
+import MineTheSpire.ui.Inventory;
 import MineTheSpire.util.CardStats;
 
 public abstract class EquipmentTool extends BaseCard{
@@ -16,8 +17,8 @@ public abstract class EquipmentTool extends BaseCard{
         super(ID, info);
     }
 
-    public EquipmentTool(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond) {
-        super(ID, info, baseWood, baseStone, baseIron, baseDiamond);
+    public EquipmentTool(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond, int baseDurability) {
+        super(ID, info, baseWood, baseStone, baseIron, baseDiamond, baseDurability);
     }
 
     public void setDurability(int durability){
@@ -43,5 +44,25 @@ public abstract class EquipmentTool extends BaseCard{
         recipe.put("diamondCost", diamondCost);
         return recipe;
     }
+
+    public static boolean hasEnoughResources(Dictionary<String, Integer> recipe){
+      int woodCost = recipe.get("woodCost");
+      int stoneCost = recipe.get("stoneCost");
+      int ironCost = recipe.get("ironCost");
+      int diamondCost = recipe.get("diamondCost");
+      if (woodCost > Inventory.getWoodAmount()){
+         return false;
+      }
+      if (stoneCost > Inventory.getStoneAmount()){
+         return false;
+      }
+      if (ironCost > Inventory.getIronAmount()){
+         return false;
+      }
+      if (diamondCost > Inventory.getDiamondAmount()){
+         return false;
+      }
+      return true;
+   }
 }
 

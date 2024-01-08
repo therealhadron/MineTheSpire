@@ -41,9 +41,18 @@ public class OpenCraftingAction extends AbstractGameAction {
       } else {
          if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            if (hasEnoughResources(((EquipmentTool)c).getRecipeCost())){
+            Dictionary<String, Integer> recipe = ((EquipmentTool)c).getRecipeCost();
+            if (EquipmentTool.hasEnoughResources(((EquipmentTool)c).getRecipeCost())){
                addToBot(new AddCardToDeckAction(c));
                addToBot(new MakeTempCardInHandAction(c, true, true));
+               int woodCost = recipe.get("woodCost");
+               int stoneCost = recipe.get("stoneCost");
+               int ironCost = recipe.get("ironCost");
+               int diamondCost = recipe.get("diamondCost");
+               Inventory.useWoodAmount(woodCost);
+               Inventory.useStoneAmount(stoneCost);
+               Inventory.useIronAmount(ironCost);
+               Inventory.useDiamondAmount(diamondCost);
             } else {
                System.out.println("NOT ENOUGH RESOURCES");
             }
@@ -52,29 +61,5 @@ public class OpenCraftingAction extends AbstractGameAction {
          AbstractDungeon.player.hand.refreshHandLayout();
          this.isDone = true;
       }
-   }
-
-   private boolean hasEnoughResources(Dictionary<String, Integer> recipe){
-      int woodCost = recipe.get("woodCost");
-      int stoneCost = recipe.get("stoneCost");
-      int ironCost = recipe.get("ironCost");
-      int diamondCost = recipe.get("diamondCost");
-      if (woodCost > Inventory.getWoodAmount()){
-         return false;
-      }
-      if (stoneCost > Inventory.getStoneAmount()){
-         return false;
-      }
-      if (ironCost > Inventory.getIronAmount()){
-         return false;
-      }
-      if (diamondCost > Inventory.getDiamondAmount()){
-         return false;
-      }
-      Inventory.useWoodAmount(woodCost);
-      Inventory.useStoneAmount(stoneCost);
-      Inventory.useIronAmount(ironCost);
-      Inventory.useDiamondAmount(diamondCost);
-      return true;
    }
 }

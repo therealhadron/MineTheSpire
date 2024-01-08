@@ -15,10 +15,10 @@ public class StonePickaxe extends EquipmentTool{
     public static final String ID = makeID(StonePickaxe.class.getSimpleName());
 
     private static final int COST = 1;
-    private final int DURABILITY = 4;
+    private static final int DURABILITY = 4;
 
     private final int WOOD_COST = 0;
-    private final int STONE_COST = 1;
+    private final int STONE_COST = 2;
     private final int IRON_COST = 0;
     private final int DIAMOND_COST = 0;
 
@@ -30,9 +30,9 @@ public class StonePickaxe extends EquipmentTool{
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF, COST);
 
     public StonePickaxe(){
-        super(ID, info, WOOD, STONE, IRON, DIAMOND);
+        super(ID, info, WOOD, STONE, IRON, DIAMOND, DURABILITY);
         setSelfRetain(true);
-        this.baseMagicNumber = DURABILITY;
+        this.baseDurability = DURABILITY;
         this.baseStone = this.stone = STONE;
         this.baseIron = this.iron = IRON;
         this.baseDiamond = this.diamond = DIAMOND;

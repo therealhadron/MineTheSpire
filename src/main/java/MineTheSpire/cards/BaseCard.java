@@ -33,6 +33,9 @@ public abstract class BaseCard extends CustomCard {
     public int baseDiamond = -1;
     public int diamond = -1;
 
+    public int baseDurability = -1;
+    public int durability = -1;
+
     public int woodCost = 0;
     public int stoneCost = 0;
     public int ironCost = 0;
@@ -73,12 +76,13 @@ public abstract class BaseCard extends CustomCard {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
     }
 
-    public BaseCard(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond) {
+    public BaseCard(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond, int baseDurability) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
         setCustomVar("Wo", baseWood);
         setCustomVar("St", baseStone);
         setCustomVar("Ir", baseIron);
         setCustomVar("Di", baseDiamond);
+        setCustomVar("Dur", baseDurability);
     }
 
     public BaseCard(String ID, CardStats info, boolean upgradesDescription) {

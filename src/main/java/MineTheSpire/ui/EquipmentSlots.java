@@ -81,7 +81,7 @@ public class EquipmentSlots{
         }
         toolCard = c;
         toolName = toolCard.cardID;
-        toolDurability = toolCard.baseMagicNumber;
+        toolDurability = toolCard.baseDurability;
         toolCard.setDurability(toolDurability);
     }
 
