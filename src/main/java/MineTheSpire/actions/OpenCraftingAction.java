@@ -4,6 +4,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,20 +23,20 @@ import MineTheSpire.ui.Inventory;
 
 public class OpenCraftingAction extends AbstractGameAction {
    private AbstractCard c;
+   private CardGroup cg = new CardGroup(CardGroupType.UNSPECIFIED);
 
    public OpenCraftingAction() {
       this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
-   }
-
-   @Override
-   public void update() {
-      if (this.duration == this.startDuration) {
-         CardGroup cg = new CardGroup(CardGroupType.UNSPECIFIED);
          cg.addToTop(new WoodenPickaxe());
          cg.addToTop(new StonePickaxe());
          cg.addToTop(new IronPickaxe());
          cg.addToTop(new DiamondPickaxe());
          cg.addToTop(new WoodenAxe());
+   }
+
+   @Override
+   public void update() {
+      if (this.duration == this.startDuration) {
          AbstractDungeon.gridSelectScreen.open(cg, 1, "What would you like to craft?", false, false, true, true);
          this.tickDuration();
       } else {
@@ -45,16 +46,9 @@ public class OpenCraftingAction extends AbstractGameAction {
             if (EquipmentTool.hasEnoughResources(((EquipmentTool)c).getRecipeCost())){
                addToBot(new AddCardToDeckAction(c));
                addToBot(new MakeTempCardInHandAction(c, true, true));
-               int woodCost = recipe.get("woodCost");
-               int stoneCost = recipe.get("stoneCost");
-               int ironCost = recipe.get("ironCost");
-               int diamondCost = recipe.get("diamondCost");
-               Inventory.useWoodAmount(woodCost);
-               Inventory.useStoneAmount(stoneCost);
-               Inventory.useIronAmount(ironCost);
-               Inventory.useDiamondAmount(diamondCost);
+               addToBot(new AddToInventoryAction(recipe));
             } else {
-               System.out.println("NOT ENOUGH RESOURCES");
+               this.addToBot(new TalkAction(true, "Not enough resources!", 1.0F, 2.0F));
             }
          }
          AbstractDungeon.gridSelectScreen.selectedCards.clear();
