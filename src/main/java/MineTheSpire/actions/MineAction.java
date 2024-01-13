@@ -37,10 +37,6 @@ public class MineAction extends AbstractGameAction {
         Inventory.addStoneAmount(this.stone);
         Inventory.addIronAmount(this.iron);
         Inventory.addDiamondAmount(this.diamond);
-        System.out.println("Wood: " + Inventory.getWoodAmount());
-        System.out.println("Stone: " + Inventory.getStoneAmount());
-        System.out.println("Iron: " + Inventory.getIronAmount());
-        System.out.println("Diamond: " + Inventory.getDiamondAmount());
         isDone = true;
     }
     

@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 import MineTheSpire.ui.Inventory;
 
-public class AddToInventoryAction extends AbstractGameAction {
+public class UseInventoryAction extends AbstractGameAction {
     private int wood;
     private int stone;
     private int iron;
     private int diamond;
 
-    public AddToInventoryAction(Dictionary<String, Integer> recipe) {
+    public UseInventoryAction(Dictionary<String, Integer> recipe) {
         this.wood = recipe.get("wood");
         this.stone = recipe.get("stone");
         this.iron = recipe.get("iron");
@@ -21,10 +21,10 @@ public class AddToInventoryAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        Inventory.addWoodAmount(wood);
-        Inventory.addStoneAmount(stone);
-        Inventory.addIronAmount(iron);
-        Inventory.addDiamondAmount(diamond);
+        Inventory.useWoodAmount(wood);
+        Inventory.useStoneAmount(stone);
+        Inventory.useIronAmount(iron);
+        Inventory.useDiamondAmount(diamond);
         isDone = true;
     }
 }

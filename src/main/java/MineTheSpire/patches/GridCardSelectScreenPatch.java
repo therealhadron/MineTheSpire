@@ -1,15 +1,20 @@
 package MineTheSpire.patches;
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.screens.MasterDeckViewScreen;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 
 import MineTheSpire.cards.EquipmentCards.EquipmentTool;
+import javassist.CtBehavior;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 
@@ -44,11 +49,21 @@ public class GridCardSelectScreenPatch {
         }
     }
 
-    // private static class Locator extends SpireInsertLocator {
-	// 	@Override
-	// 	public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
-	// 		Matcher finalMatcher = new Matcher.FieldAccessMatcher(GridCardSelectScreen.class, "targetGroup");
-	// 		return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
-	// 	}
-	// }
+    @SpirePatch(clz = GridCardSelectScreen.class, method = "updateCardPositionsAndHoverLogic")
+    public static class GridCardSelectScreenPadding{
+        @SpireInsertPatch(rloc=60, localvars = {"lineNum", "mod"})
+        public static void Insert(GridCardSelectScreen __instance, float ___drawStartY, @ByRef int[] lineNum, @ByRef int[] mod){
+            if (lineNum[0] == 1){
+                lineNum[0] = 2;
+            }
+        }
+    }
+
+    private static class Locator extends SpireInsertLocator {
+		@Override
+		public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+			Matcher finalMatcher = new Matcher.FieldAccessMatcher(ArrayList.class, "get");
+			return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+		}
+	}
 }

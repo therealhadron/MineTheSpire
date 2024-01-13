@@ -18,7 +18,6 @@ public class ObsidianBlock extends BaseCard{
     public ObsidianBlock(){
         super(ID, info);
         setBlock(BLOCK);
-        setExhaust(true);
     }
 
     @Override

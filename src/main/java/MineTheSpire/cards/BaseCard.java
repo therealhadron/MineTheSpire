@@ -24,17 +24,17 @@ import java.util.Map;
 import java.util.function.BiFunction;
 
 public abstract class BaseCard extends CustomCard {
-    public int baseWood = -1;
-    public int wood = -1;
-    public int baseStone = -1;
-    public int stone = -1;
-    public int baseIron = -1;
-    public int iron = -1;
-    public int baseDiamond = -1;
-    public int diamond = -1;
+    public int baseWood = 0;
+    public int wood = 0;
+    public int baseStone = 0;
+    public int stone = 0;
+    public int baseIron = 0;
+    public int iron = 0;
+    public int baseDiamond = 0;
+    public int diamond = 0;
 
-    public int baseDurability = -1;
-    public int durability = -1;
+    public int baseDurability = 0;
+    public int durability = 0;
 
     public int woodCost = 0;
     public int stoneCost = 0;
@@ -76,6 +76,7 @@ public abstract class BaseCard extends CustomCard {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
     }
 
+    //For equipment
     public BaseCard(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond, int baseDurability) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
         setCustomVar("Wo", baseWood);
@@ -84,7 +85,6 @@ public abstract class BaseCard extends CustomCard {
         setCustomVar("Di", baseDiamond);
         setCustomVar("Dur", baseDurability);
     }
-
     public BaseCard(String ID, CardStats info, boolean upgradesDescription) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, upgradesDescription);
     }
@@ -311,7 +311,6 @@ public abstract class BaseCard extends CustomCard {
         var.upgradedColor = upgradedColor;
     }
 
-
     private LocalVarInfo getCustomVar(String key) {
         return cardVariables.get(key);
     }
@@ -384,7 +383,6 @@ public abstract class BaseCard extends CustomCard {
         return var.upgraded;
     }
 
-
     protected final void setCostUpgrade(int costUpgrade)
     {
         this.costUpgrade = costUpgrade;
@@ -418,7 +416,6 @@ public abstract class BaseCard extends CustomCard {
         this.upgRetain = upgRetain;
         this.selfRetain = baseRetain;
     }
-
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {
@@ -671,7 +668,6 @@ public abstract class BaseCard extends CustomCard {
             return var.decreasedColor;
         }
     }
-
 
     protected static class LocalVarInfo {
         int base, value, upgrade;

@@ -100,7 +100,7 @@
 
   "${modID}:ObsidianBlock":{
     "NAME": "Obsidian Block",
-    "DESCRIPTION": "Gain !B! block. NL Exhaust."
+    "DESCRIPTION": "Gain !B! block."
   },
 
   "${modID}:BucketClutch":{
@@ -134,5 +134,40 @@
   "${modID}:WoodenAxe":{
     "NAME": "Wooden Axe",
     "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!"
+  },
+
+  "${modID}:StoneAxe":{
+    "NAME": "Stone Axe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!"
+  },
+
+  "${modID}:IronAxe":{
+    "NAME": "Iron Axe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!"
+  },
+
+  "${modID}:DiamondAxe":{
+    "NAME": "Diamond Axe",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!"
+  },
+
+  "${modID}:WoodenSword":{
+    "NAME": "Wooden Sword",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Gain !M! Strength when Equipped. NL ${modID}:Durability left !${modID}:Dur!"
+  },
+
+  "${modID}:StoneSword":{
+    "NAME": "Stone Sword",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Gain !M! Strength when Equipped. NL ${modID}:Durability left !${modID}:Dur!"
+  },
+
+  "${modID}:IronSword":{
+    "NAME": "Iron Sword",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Gain !M! Strength when Equipped. NL ${modID}:Durability left !${modID}:Dur!"
+  },
+
+  "${modID}:DiamondSword":{
+    "NAME": "Diamond Sword",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Gain !M! Strength when Equipped. NL ${modID}:Durability left !${modID}:Dur!"
   }
 }

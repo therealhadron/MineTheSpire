@@ -1,7 +1,6 @@
 package MineTheSpire.actions;
 
 import java.util.Dictionary;
-import java.util.Hashtable;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
@@ -13,13 +12,19 @@ import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import MineTheSpire.cards.EquipmentCards.DiamondAxe;
 import MineTheSpire.cards.EquipmentCards.DiamondPickaxe;
+import MineTheSpire.cards.EquipmentCards.DiamondSword;
 import MineTheSpire.cards.EquipmentCards.EquipmentTool;
+import MineTheSpire.cards.EquipmentCards.IronAxe;
 import MineTheSpire.cards.EquipmentCards.IronPickaxe;
+import MineTheSpire.cards.EquipmentCards.IronSword;
+import MineTheSpire.cards.EquipmentCards.StoneAxe;
 import MineTheSpire.cards.EquipmentCards.StonePickaxe;
+import MineTheSpire.cards.EquipmentCards.StoneSword;
 import MineTheSpire.cards.EquipmentCards.WoodenAxe;
 import MineTheSpire.cards.EquipmentCards.WoodenPickaxe;
-import MineTheSpire.ui.Inventory;
+import MineTheSpire.cards.EquipmentCards.WoodenSword;
 
 public class OpenCraftingAction extends AbstractGameAction {
    private AbstractCard c;
@@ -32,6 +37,13 @@ public class OpenCraftingAction extends AbstractGameAction {
          cg.addToTop(new IronPickaxe());
          cg.addToTop(new DiamondPickaxe());
          cg.addToTop(new WoodenAxe());
+         cg.addToTop(new StoneAxe());
+         cg.addToTop(new IronAxe());
+         cg.addToTop(new DiamondAxe());
+         cg.addToTop(new WoodenSword());
+         cg.addToTop(new StoneSword());
+         cg.addToTop(new IronSword());
+         cg.addToTop(new DiamondSword());
    }
 
    @Override
@@ -46,7 +58,7 @@ public class OpenCraftingAction extends AbstractGameAction {
             if (EquipmentTool.hasEnoughResources(((EquipmentTool)c).getRecipeCost())){
                addToBot(new AddCardToDeckAction(c));
                addToBot(new MakeTempCardInHandAction(c, true, true));
-               addToBot(new AddToInventoryAction(recipe));
+               addToBot(new UseInventoryAction(recipe));
             } else {
                this.addToBot(new TalkAction(true, "Not enough resources!", 1.0F, 2.0F));
             }
