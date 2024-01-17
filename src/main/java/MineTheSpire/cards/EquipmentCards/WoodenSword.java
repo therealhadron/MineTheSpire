@@ -5,16 +5,19 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import MineTheSpire.util.CardStats;
+import MineTheSpire.actions.EquipAction;
 import MineTheSpire.character.Minecrafter;
 import MineTheSpire.patches.CustomTags;
+import MineTheSpire.powers.SwordPower;
 import MineTheSpire.ui.EquipmentSlots;
 
 public class WoodenSword extends EquipmentTool{
     public static final String ID = makeID(WoodenSword.class.getSimpleName());
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DURABILITY = 2;
 
     private final int WOOD_COST = 0;
@@ -49,10 +52,10 @@ public class WoodenSword extends EquipmentTool{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        EquipmentSlots.equipTool(this);
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, baseMagicNumber)));
+        addToBot(new EquipAction(this));
+        addToBot(new ApplyPowerAction(p, p, new SwordPower(p, this.baseMagicNumber)));
     }
-
+    
     @Override
     public AbstractCard makeCopy() {
         return new WoodenSword();

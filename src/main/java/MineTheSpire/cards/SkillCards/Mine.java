@@ -22,7 +22,7 @@ public class Mine extends AbstractMiningCard{
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE, COST);
 
     public Mine(){
-        super(ID, info);
+        super(ID, info, STONE, IRON, DIAMOND);
         baseStone = stone = STONE;
         baseIron = iron = IRON;
         baseDiamond = diamond = DIAMOND;

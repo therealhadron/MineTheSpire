@@ -4,10 +4,15 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Iterator;
 
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import MineTheSpire.cards.BaseCard;
+import MineTheSpire.ui.EquipmentSlots;
 import MineTheSpire.ui.Inventory;
 import MineTheSpire.util.CardStats;
 
@@ -64,5 +69,18 @@ public abstract class EquipmentTool extends BaseCard {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        } else if (EquipmentSlots.getEquipment() != null && EnergyPanel.getCurrentEnergy() == 0) {
+            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            return false;
+        } else {
+            return canUse;
+        }
     }
 }

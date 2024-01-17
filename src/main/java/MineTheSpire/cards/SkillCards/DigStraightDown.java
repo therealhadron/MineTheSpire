@@ -1,9 +1,7 @@
 package MineTheSpire.cards.SkillCards;
 
-import java.time.Duration;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,13 +17,15 @@ public class DigStraightDown extends AbstractMiningCard{
     public static final String ID = makeID(DigStraightDown.class.getSimpleName());
 
     private static final int STONE = 1;
+    private static final int IRON = 0;
+    private static final int DIAMOND = 0;
     private static final int COST = 0;
     private static final int DURABILITY_CHANGE = -1;
 
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE, COST);
 
     public DigStraightDown(){
-        super(ID, info);
+        super(ID, info, STONE, IRON, DIAMOND);
         this.cardsToPreview = new Lava();
         stone = baseStone = STONE;
         baseDurability = DURABILITY_CHANGE;

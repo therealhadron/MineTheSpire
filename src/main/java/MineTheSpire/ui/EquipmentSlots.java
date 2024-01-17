@@ -1,6 +1,7 @@
 package MineTheSpire.ui;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,10 +12,12 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import MineTheSpire.cards.EquipmentCards.EquipmentTool;
 import MineTheSpire.character.Minecrafter;
 import MineTheSpire.powers.PickaxePower;
+import MineTheSpire.powers.SwordPower;
 
 import java.util.Iterator;
 
@@ -76,7 +79,7 @@ public class EquipmentSlots{
     }
 
     public static void equipTool(EquipmentTool c){
-        if (toolCard !=null){
+        if (toolCard !=null && AbstractDungeon.player.energy.energy >= 1){
             unequipTool();
         }
         toolCard = c;
@@ -88,9 +91,19 @@ public class EquipmentSlots{
     public static void unequipTool(){
         AbstractPlayer p = AbstractDungeon.player;
 
-        p.hand.group.add(toolCard);
-        toolCard.setDurability(toolDurability);
-        resetEquipmentSlots();
+        if (EnergyPanel.getCurrentEnergy() == 0){
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Not enough energy to unequip!", 1.0F, 2.0F));
+        } else {
+            p.energy.use(1);
+            if (p.hand.group.size() == 10){
+                p.createHandIsFullDialog();
+                p.discardPile.moveToDiscardPile(toolCard);
+            } else {
+                p.hand.moveToHand(toolCard);
+            }
+            toolCard.setDurability(toolDurability);
+            resetEquipmentSlots();
+        }
     }
 
     public static void useDurability(int durabilityChange){
@@ -119,6 +132,7 @@ public class EquipmentSlots{
     public static void resetEquipmentSlots(){
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, PickaxePower.POWER_ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, SwordPower.POWER_ID));
         toolCard = null;
         toolDurability = 0;
         toolName = "None";

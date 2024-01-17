@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import MineTheSpire.util.CardStats;
+import MineTheSpire.actions.EquipAction;
 import MineTheSpire.character.Minecrafter;
 import MineTheSpire.patches.CustomTags;
 import MineTheSpire.powers.PickaxePower;
@@ -14,7 +15,7 @@ import MineTheSpire.ui.EquipmentSlots;
 public class DiamondPickaxe extends EquipmentTool{
     public static final String ID = makeID(DiamondPickaxe.class.getSimpleName());
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DURABILITY = 10;
 
     private final int WOOD_COST = 0;
@@ -46,7 +47,7 @@ public class DiamondPickaxe extends EquipmentTool{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        EquipmentSlots.equipTool(this);
+        addToBot(new EquipAction(this));
         addToBot(new ApplyPowerAction(p, p, new PickaxePower(p, baseStone, baseIron, baseDiamond)));
     }
 

@@ -8,11 +8,15 @@ import MineTheSpire.ui.EquipmentSlots;
 import MineTheSpire.util.CardStats;
 
 public abstract class AbstractMiningCard extends BaseCard{
-    public AbstractMiningCard(String ID, CardStats info){
+    public AbstractMiningCard(String ID, CardStats info, int s, int i, int d){
         super(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
-        setCustomVar("St", stone);
-        setCustomVar("Ir", iron);
-        setCustomVar("Di", diamond);
+        setCustomVar("St", s);
+        setCustomVar("Ir", i);
+        setCustomVar("Di", d);
+
+        stone = s;
+        iron = i;
+        diamond = d;
 
         setVarCalculation("St", (m, baseStone)->{
             AbstractPower power = AbstractDungeon.player.getPower(PickaxePower.POWER_ID);
