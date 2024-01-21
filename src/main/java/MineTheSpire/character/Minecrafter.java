@@ -21,9 +21,11 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
+import MineTheSpire.cards.AttackCards.Chop;
 import MineTheSpire.cards.AttackCards.SweepingBlade;
 import MineTheSpire.cards.BasicCards.Defend_Minecrafter;
 import MineTheSpire.cards.BasicCards.Strike_Minecrafter;
+import MineTheSpire.cards.EquipmentCards.WoodenAxe;
 import MineTheSpire.cards.EquipmentCards.WoodenPickaxe;
 import MineTheSpire.cards.PowerCards.TNTCannon;
 import MineTheSpire.cards.SkillCards.MilkBucket;
@@ -88,14 +90,10 @@ public class Minecrafter extends CustomPlayer {
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
         retVal.add(Defend_Minecrafter.ID);
-        retVal.add(MilkBucket.ID);
-        retVal.add(Mine.ID);
-        retVal.add(Mine.ID);
-        retVal.add(SweepingBlade.ID);
         retVal.add(Strike_Minecrafter.ID);
-        retVal.add(WoodenPickaxe.ID);
-        retVal.add(WoodenPickaxe.ID);
-        retVal.add(TNTCannon.ID);
+        retVal.add(Chop.ID);
+        retVal.add(Chop.ID);
+        retVal.add(WoodenAxe.ID);
 
         return retVal;
     }

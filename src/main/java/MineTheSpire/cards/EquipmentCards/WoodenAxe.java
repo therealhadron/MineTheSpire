@@ -8,11 +8,12 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import MineTheSpire.util.CardStats;
 import MineTheSpire.actions.EquipAction;
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.character.Minecrafter;
 import MineTheSpire.patches.CustomTags;
-import MineTheSpire.ui.EquipmentSlots;
+import MineTheSpire.powers.AxePower;
 
-public class WoodenAxe extends EquipmentTool{
+public class WoodenAxe extends AbstractToolCard{
     public static final String ID = makeID(WoodenAxe.class.getSimpleName());
 
     private static final int COST = 0;
@@ -23,12 +24,10 @@ public class WoodenAxe extends EquipmentTool{
     private final int IRON_COST = 0;
     private final int DIAMOND_COST = 0;
 
-    private final static int WOOD = 1;
+    private final static int WOOD = 2;
     private final static int STONE = 0;
     private final static int IRON = 0;
     private final static int DIAMOND = 0;
-
-    private final int STRENGTH = 2;
 
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.POWER, CardRarity.SPECIAL, CardTarget.NONE, COST);
 
@@ -36,6 +35,7 @@ public class WoodenAxe extends EquipmentTool{
         super(ID, info, WOOD, STONE, IRON, DIAMOND, DURABILITY);
         setSelfRetain(true);
         this.baseDurability = DURABILITY;
+        this.baseWood = this.wood = WOOD;
         this.baseStone = this.stone = STONE;
         this.baseIron = this.iron = IRON;
         this.baseDiamond = this.diamond = DIAMOND;
@@ -50,7 +50,7 @@ public class WoodenAxe extends EquipmentTool{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new EquipAction(this));
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH)));
+        addToBot(new ApplyPowerAction(p, p, new AxePower(p, baseWood)));
     }
 
     @Override

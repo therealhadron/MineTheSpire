@@ -7,37 +7,40 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import MineTheSpire.cards.BaseCard;
+import MineTheSpire.actions.ChopAction;
+import MineTheSpire.cards.AbstractMiningCard;
 import MineTheSpire.util.CardStats;
 import MineTheSpire.character.Minecrafter;
-import MineTheSpire.ui.Inventory;
+import MineTheSpire.ui.EquipmentSlots;
 
-public class Chop extends BaseCard{
+public class Chop extends AbstractMiningCard{
     public static final String ID = makeID(Chop.class.getSimpleName());
 
-    private static final int AMOUNT = 2;
+    private static final int WOOD = 2;
+    private static final int STONE = 2;
+    private static final int IRON = 2;
+    private static final int DIAMOND = 2;
+
     private static final int COST = 1;
 
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 2;
+
+    private static final int DURABILITY_CHANGE = -1;
 
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY, COST);
 
     public Chop(){
-        super(ID, info);
-        this.magicNumber = this.baseMagicNumber = AMOUNT;
+        super(ID, info, WOOD, STONE, IRON, DIAMOND);
+        this.baseWood = this.wood = WOOD;
         setDamage(DAMAGE, UPG_DAMAGE);
         setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        Inventory.addWoodAmount(this.baseMagicNumber);
-        System.out.println("Wood: " + Inventory.getWoodAmount());
-        System.out.println("Stone: " + Inventory.getStoneAmount());
-        System.out.println("Iron: " + Inventory.getIronAmount());
-        System.out.println("Diamond: " + Inventory.getDiamondAmount());
+        addToBot(new ChopAction(wood, EquipmentSlots.getEquipment(), DURABILITY_CHANGE));
+        addToBot(new DamageAction(m, new DamageInfo(p, DAMAGE, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 
     @Override

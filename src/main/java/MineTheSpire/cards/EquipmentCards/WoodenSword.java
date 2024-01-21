@@ -4,17 +4,15 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import MineTheSpire.util.CardStats;
 import MineTheSpire.actions.EquipAction;
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.character.Minecrafter;
 import MineTheSpire.patches.CustomTags;
 import MineTheSpire.powers.SwordPower;
-import MineTheSpire.ui.EquipmentSlots;
 
-public class WoodenSword extends EquipmentTool{
+public class WoodenSword extends AbstractToolCard{
     public static final String ID = makeID(WoodenSword.class.getSimpleName());
 
     private static final int COST = 0;

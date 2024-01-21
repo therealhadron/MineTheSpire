@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import MineTheSpire.cards.EquipmentCards.EquipmentTool;
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.powers.PickaxePower;
 import MineTheSpire.ui.EquipmentSlots;
 import MineTheSpire.ui.Inventory;
@@ -15,9 +15,9 @@ public class MineAction extends AbstractGameAction {
     private int iron = 0;
     private int diamond = 0;
     private int durability = 0;
-    private EquipmentTool tool = null;
+    private AbstractToolCard tool = null;
 
-    public MineAction(int stone, int iron, int diamond, EquipmentTool tool, int durability){
+    public MineAction(int stone, int iron, int diamond, AbstractToolCard tool, int durability){
         this.stone = stone;
         this.iron = iron;
         this.diamond = diamond;

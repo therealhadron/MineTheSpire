@@ -12,10 +12,10 @@ import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.cards.EquipmentCards.DiamondAxe;
 import MineTheSpire.cards.EquipmentCards.DiamondPickaxe;
 import MineTheSpire.cards.EquipmentCards.DiamondSword;
-import MineTheSpire.cards.EquipmentCards.EquipmentTool;
 import MineTheSpire.cards.EquipmentCards.IronAxe;
 import MineTheSpire.cards.EquipmentCards.IronPickaxe;
 import MineTheSpire.cards.EquipmentCards.IronSword;
@@ -54,8 +54,8 @@ public class OpenCraftingAction extends AbstractGameAction {
       } else {
          if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            Dictionary<String, Integer> recipe = ((EquipmentTool)c).getRecipeCost();
-            if (EquipmentTool.hasEnoughResources(((EquipmentTool)c).getRecipeCost())){
+            Dictionary<String, Integer> recipe = ((AbstractToolCard)c).getRecipeCost();
+            if (AbstractToolCard.hasEnoughResources(((AbstractToolCard)c).getRecipeCost())){
                addToBot(new AddCardToDeckAction(c));
                addToBot(new MakeTempCardInHandAction(c, true, true));
                addToBot(new UseInventoryAction(recipe));

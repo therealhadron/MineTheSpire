@@ -2,13 +2,13 @@ package MineTheSpire.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
-import MineTheSpire.cards.EquipmentCards.EquipmentTool;
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.ui.EquipmentSlots;
 
 public class EquipAction extends AbstractGameAction {
-    private EquipmentTool tool = null;
+    private AbstractToolCard tool = null;
 
-    public EquipAction(EquipmentTool tool){
+    public EquipAction(AbstractToolCard tool){
         this.tool = tool;
     }
 

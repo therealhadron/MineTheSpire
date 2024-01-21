@@ -13,6 +13,7 @@ import MineTheSpire.ui.EquipmentSlots;
 public class Mine extends AbstractMiningCard{
     public static final String ID = makeID(Mine.class.getSimpleName());
 
+    private static final int WOOD = 0;
     private static final int STONE = 1;
     private static final int IRON = 0;
     private static final int DIAMOND = 0;
@@ -22,7 +23,7 @@ public class Mine extends AbstractMiningCard{
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE, COST);
 
     public Mine(){
-        super(ID, info, STONE, IRON, DIAMOND);
+        super(ID, info, WOOD, STONE, IRON, DIAMOND);
         baseStone = stone = STONE;
         baseIron = iron = IRON;
         baseDiamond = diamond = DIAMOND;

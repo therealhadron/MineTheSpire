@@ -23,6 +23,15 @@
       " NL Get #b",
       " more diamond everytime you #yMine"
     ]
+  },
+
+  "${modID}:AxePower": {
+    "NAME": "Equipped Axe",
+    "DESCRIPTIONS": [
+      "Get #b",
+      " more wood everytime you #yChop.",
+      " NL Every attack applies vulnerable and uses durability."
+    ]
   }
 
 }

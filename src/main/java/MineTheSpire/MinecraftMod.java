@@ -34,6 +34,7 @@ import MineTheSpire.ui.Inventory;
 import MineTheSpire.util.GeneralUtils;
 import MineTheSpire.util.KeywordInfo;
 import MineTheSpire.util.TextureLoader;
+import MineTheSpire.variables.Durability;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -238,6 +239,7 @@ public class MinecraftMod implements
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addDynamicVariable(new Durability());
         new AutoAdd(modID) //Loads files from this mod
             .packageFilter(BaseCard.class) //In the same package as this class
             .setDefaultSeen(true) //And marks them as seen in the compendium

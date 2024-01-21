@@ -75,16 +75,6 @@ public abstract class BaseCard extends CustomCard {
     public BaseCard(String ID, CardStats info) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
     }
-
-    //For equipment
-    public BaseCard(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond, int baseDurability) {
-        this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
-        setCustomVar("Wo", baseWood);
-        setCustomVar("St", baseStone);
-        setCustomVar("Ir", baseIron);
-        setCustomVar("Di", baseDiamond);
-        setCustomVar("Dur", baseDurability);
-    }
     public BaseCard(String ID, CardStats info, boolean upgradesDescription) {
         this(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor, upgradesDescription);
     }

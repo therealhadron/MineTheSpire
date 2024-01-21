@@ -5,7 +5,15 @@
       "Mine",
       "mine"
     ],
-    "DESCRIPTION": "Mine adds resources to your inventory"
+    "DESCRIPTION": "Mine adds stone, iron, and/or diamond to your inventory"
+  },
+  {
+    "PROPER_NAME": "Chop",
+    "NAMES": [
+      "Chop",
+      "chop"
+    ],
+    "DESCRIPTION": "Chop adds wood to your inventory"
   },
   {
     "PROPER_NAME": "Equip",

@@ -19,6 +19,13 @@ public class UseInventoryAction extends AbstractGameAction {
         this.diamond = recipe.get("diamond");
     }
 
+    public UseInventoryAction(int wood, int stone, int iron, int diamond){
+        this.wood = wood;
+        this.stone = stone;
+        this.iron = iron;
+        this.diamond = diamond;
+    }
+
     @Override
     public void update() {
         Inventory.useWoodAmount(wood);

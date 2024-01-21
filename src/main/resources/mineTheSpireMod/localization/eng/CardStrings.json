@@ -24,6 +24,22 @@
     "NAME": "Snowball",
     "DESCRIPTION": "Apply !M! Weak."
   },
+  
+  "${modID}:Cobweb":{
+    "NAME": "Cobweb",
+    "DESCRIPTION": "Apply Slow. Exhaust"
+  },
+  
+  "${modID}:CriticalStrike":{
+    "NAME": "Critical Strike",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! vulnerable."
+  },
+  
+  "${modID}:MinecartRam":{
+    "NAME": "Minecart Ram",
+    "DESCRIPTION": "Deal !D! damage to all enemies. Use !${modID}:St! stone.",
+    "EXTENDED_DESCRIPTION": ["Not enough resources!"]
+  },
 
   "${modID}:SweepingBlade":{
     "NAME": "Sweeping Blade",
@@ -59,7 +75,7 @@
 
   "${modID}:Chop":{
     "NAME": "Chop",
-    "DESCRIPTION": "Deal !D! damage. Chop !M! Wood. Exhaust."
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Chop !${modID}:Wo! Wood. Exhaust."
   },
 
   "${modID}:DigStraightDown":{
@@ -137,25 +153,25 @@
 
   "${modID}:WoodenAxe":{
     "NAME": "Wooden Axe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Chop Wood. NL Every attack applies vulnerable and uses durability. NL ${modID}:Durability left !${modID}:Dur!",
     "EXTENDED_DESCRIPTION": ["Not enough energy!"]
   },
 
   "${modID}:StoneAxe":{
     "NAME": "Stone Axe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Chop Wood. NL Every attack applies vulnerable and uses durability. NL ${modID}:Durability left !${modID}:Dur!",
     "EXTENDED_DESCRIPTION": ["Not enough energy!"]
   },
 
   "${modID}:IronAxe":{
     "NAME": "Iron Axe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Chop Wood. NL Every attack applies vulnerable and uses durability. NL ${modID}:Durability left !${modID}:Dur!",
     "EXTENDED_DESCRIPTION": ["Not enough energy!"]
   },
 
   "${modID}:DiamondAxe":{
     "NAME": "Diamond Axe",
-    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL Chop Wood. NL Gain Strength. NL ${modID}:Durability left !${modID}:Dur!",
+    "DESCRIPTION": "Retain. NL ${modID}:Equip this tool. NL ${modID}:Chop Wood. NL Every attack applies vulnerable and uses durability. NL ${modID}:Durability left !${modID}:Dur!",
     "EXTENDED_DESCRIPTION": ["Not enough energy!"]
   },
 

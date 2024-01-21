@@ -3,17 +3,20 @@ package MineTheSpire.cards;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import MineTheSpire.powers.AxePower;
 import MineTheSpire.powers.PickaxePower;
 import MineTheSpire.ui.EquipmentSlots;
 import MineTheSpire.util.CardStats;
 
 public abstract class AbstractMiningCard extends BaseCard{
-    public AbstractMiningCard(String ID, CardStats info, int s, int i, int d){
+    public AbstractMiningCard(String ID, CardStats info, int w, int s, int i, int d){
         super(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
+        setCustomVar("Wo", w);
         setCustomVar("St", s);
         setCustomVar("Ir", i);
         setCustomVar("Di", d);
 
+        wood = w;
         stone = s;
         iron = i;
         diamond = d;
@@ -50,6 +53,17 @@ public abstract class AbstractMiningCard extends BaseCard{
             }
             diamond = baseDiamond;
             return diamond;
+        });
+        setVarCalculation("Wo", (m, baseWood)->{
+            AbstractPower power = AbstractDungeon.player.getPower(AxePower.POWER_ID);
+            if (EquipmentSlots.getEquipment() != null){
+                if (power != null){
+                    wood = baseWood + EquipmentSlots.getEquipment().wood;
+                    return wood;
+                }
+            }
+            wood = baseWood;
+            return wood;
         });
     }
 }

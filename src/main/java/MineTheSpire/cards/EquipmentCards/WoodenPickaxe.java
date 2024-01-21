@@ -4,16 +4,15 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import MineTheSpire.util.CardStats;
 import MineTheSpire.actions.EquipAction;
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.character.Minecrafter;
 import MineTheSpire.patches.CustomTags;
 import MineTheSpire.powers.PickaxePower;
-import MineTheSpire.ui.EquipmentSlots;
 
-public class WoodenPickaxe extends EquipmentTool{
+public class WoodenPickaxe extends AbstractToolCard{
     public static final String ID = makeID(WoodenPickaxe.class.getSimpleName());
 
     private static final int COST = 0;
@@ -34,7 +33,7 @@ public class WoodenPickaxe extends EquipmentTool{
     public WoodenPickaxe(){
         super(ID, info, WOOD, STONE, IRON, DIAMOND, DURABILITY);
         setSelfRetain(true);
-        this.baseDurability = DURABILITY;
+        this.baseDurability = this.durability = this.baseMagicNumber = DURABILITY;
         this.baseStone = this.stone = STONE;
         this.baseIron = this.iron = IRON;
         this.baseDiamond = this.diamond = DIAMOND;

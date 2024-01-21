@@ -1,30 +1,31 @@
-package MineTheSpire.cards.EquipmentCards;
+package MineTheSpire.cards;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Iterator;
 
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import MineTheSpire.cards.BaseCard;
 import MineTheSpire.ui.EquipmentSlots;
 import MineTheSpire.ui.Inventory;
 import MineTheSpire.util.CardStats;
 
-public abstract class EquipmentTool extends BaseCard {
+public abstract class AbstractToolCard extends BaseCard {
 
-    public EquipmentTool(String ID, CardStats info) {
+    public AbstractToolCard(String ID, CardStats info) {
         super(ID, info);
     }
 
-    public EquipmentTool(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond,
-            int baseDurability) {
-        super(ID, info, baseWood, baseStone, baseIron, baseDiamond, baseDurability);
+    public AbstractToolCard(String ID, CardStats info, int baseWood, int baseStone, int baseIron, int baseDiamond, int baseDurability) {
+        super(ID, info.baseCost, info.cardType, info.cardTarget, info.cardRarity, info.cardColor);
+        setCustomVar("Wo", baseWood);
+        setCustomVar("St", baseStone);
+        setCustomVar("Ir", baseIron);
+        setCustomVar("Di", baseDiamond);
     }
 
     public void setDurability(int durability) {
@@ -34,12 +35,11 @@ public abstract class EquipmentTool extends BaseCard {
         while (var1.hasNext()) {
             c = (AbstractCard) var1.next();
             if (c.uuid.equals(this.uuid)) {
-                c.baseMagicNumber = durability;
+                ((AbstractToolCard)c).baseDurability = durability;
+                break;
             }
         }
-
-        this.baseMagicNumber = durability;
-        this.initializeDescription();
+        this.baseDurability = durability;
     }
 
     public Dictionary<String, Integer> getRecipeCost() {

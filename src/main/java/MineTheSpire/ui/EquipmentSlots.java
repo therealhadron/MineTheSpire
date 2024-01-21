@@ -14,8 +14,9 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import MineTheSpire.cards.EquipmentCards.EquipmentTool;
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.character.Minecrafter;
+import MineTheSpire.powers.AxePower;
 import MineTheSpire.powers.PickaxePower;
 import MineTheSpire.powers.SwordPower;
 
@@ -34,7 +35,7 @@ public class EquipmentSlots{
     private static String toolName = "None";
     private static int toolDurability = 0;
 
-    private static EquipmentTool toolCard;
+    private static AbstractToolCard toolCard;
 
     public EquipmentSlots(){
         loadImage();
@@ -78,7 +79,7 @@ public class EquipmentSlots{
         }
     }
 
-    public static void equipTool(EquipmentTool c){
+    public static void equipTool(AbstractToolCard c){
         if (toolCard !=null && AbstractDungeon.player.energy.energy >= 1){
             unequipTool();
         }
@@ -131,15 +132,20 @@ public class EquipmentSlots{
 
     public static void resetEquipmentSlots(){
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, PickaxePower.POWER_ID));
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, SwordPower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, PickaxePower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, SwordPower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, AxePower.POWER_ID));
         toolCard = null;
         toolDurability = 0;
         toolName = "None";
     }
 
-    public static EquipmentTool getEquipment(){
+    public static AbstractToolCard getEquipment(){
         return toolCard;
+    }
+
+    public static int getToolDurability(){
+        return toolDurability;
     }
 
     // @Override

@@ -7,12 +7,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import MineTheSpire.util.CardStats;
 import MineTheSpire.actions.EquipAction;
+import MineTheSpire.cards.AbstractToolCard;
 import MineTheSpire.character.Minecrafter;
 import MineTheSpire.patches.CustomTags;
 import MineTheSpire.powers.PickaxePower;
-import MineTheSpire.ui.EquipmentSlots;
 
-public class DiamondPickaxe extends EquipmentTool{
+public class DiamondPickaxe extends AbstractToolCard{
     public static final String ID = makeID(DiamondPickaxe.class.getSimpleName());
 
     private static final int COST = 0;
