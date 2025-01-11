@@ -54,11 +54,14 @@ public class Lava extends BaseCard{
         }
 
         for (AbstractCard c : AbstractDungeon.player.hand.group){
-            if (c.cardID != ID){
+            if (c.cardID != ID && c.cardID != ObsidianBlock.class.getSimpleName() && c.cardID != Bedrock.class.getSimpleName()){
                 notLavaCards.add(c);
             }
         }
-        randomCard = AbstractDungeon.cardRandomRng.random(0,notLavaCards.size());
+        if (notLavaCards.isEmpty()) {
+            return;
+        }
+        randomCard = AbstractDungeon.cardRandomRng.random(0,notLavaCards.size() - 1);
         addToBot(new ExhaustSpecificCardAction(notLavaCards.get(randomCard), AbstractDungeon.player.hand));
     }
 
