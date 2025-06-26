@@ -11,14 +11,14 @@ import MineTheSpire.cards.BaseCard;
 import MineTheSpire.util.CardStats;
 import MineTheSpire.character.Minecrafter;
 
-public class Strike_Minecrafter extends BaseCard{
+public class Strike_Minecrafter extends BaseCard {
     public static final String ID = makeID(Strike_Minecrafter.class.getSimpleName());
     private static final CardStats info = new CardStats(Minecrafter.Enums.CARD_COLOR, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY, 1);
 
-    private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 6;
+    private static final int UPG_DAMAGE = 3;
 
-    public Strike_Minecrafter(){
+    public Strike_Minecrafter() {
         super(ID, info);
 
         tags.add(CardTags.STARTER_STRIKE);
@@ -36,4 +36,3 @@ public class Strike_Minecrafter extends BaseCard{
         return new Strike_Minecrafter();
     }
 }
-
